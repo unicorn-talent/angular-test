@@ -1,0 +1,42 @@
+<div class="container">
+  <a
+    class="btn btn-outline-primary"
+    routerLinkActive="active"
+    routerLink="/product"
+    >Add Products</a
+  >
+  <br />
+  <br />
+  <!-- No data message -->
+  <p *ngIf="Product.length <= 0" class="no-data text-center">
+    There is no Product added yet!
+  </p>
+
+  <!-- Employee list -->
+  <table class="table table-bordered" *ngIf="Product.length > 0">
+    <thead class="table-success">
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of Product; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ product.name }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price }}</td>
+        <td class="text-center edit-block">
+          <span class="edit" (click)="ViewProduct(product._id)">
+            <button type="button" class="btn btn-success btn-sm">View</button>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

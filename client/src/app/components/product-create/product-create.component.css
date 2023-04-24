@@ -1,0 +1,12 @@
+.width-40 {
+  width: 40%;
+}
+
+.button-display {
+  display: flex;
+  justify-content: space-between;
+}
+
+.margin-top {
+  margin-top: 0;
+}
